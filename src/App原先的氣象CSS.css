@@ -130,28 +130,39 @@ a {
 
 .weather {
   width: 1200px;
-  margin: 50px auto;
+  margin: 0 auto;
 }
-.container{
+h2{
+  font-size: 32px;
+  font-weight: 600;
+}
+
+#box1 {
   display: flex;
-  flex-wrap: wrap; /* 自動換行(超過550px自動換) */
+  justify-content: center;
   justify-content: space-around;
 }
-.item{
-  border: #666 1px solid;
-  width: 550px;/* 利用每個寬度550 上面那個就會自動換行 */
-  border-radius: 10px;
+
+.box2 {
+  /* flex: 1; */
+  width: 60%;
   text-align: center;
-  margin-bottom: 10px;
+  margin: 20px;
 }
-.item h3{
-  background-color: #adacac;
-  border-radius: 10px 10px 0 0;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+
+.citynn {
+  line-height: 30px;
+  border: #666 solid 2px;
+  border-radius: 15px 15px 0 0;
+  background-color: #beb0b0e5;
 }
+
 .content{
+  border: #666 solid 2px;
+  border-radius: 0 0 15px 15px;
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+}
+.item {
+  padding: 20px
 }
