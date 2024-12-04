@@ -1,7 +1,6 @@
 import { IoUmbrellaSharp } from "react-icons/io5";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import './ShowCity.css';
 function ShowCity() {
   const [weatherList, setWeatherList] = useState([]);
 
@@ -31,8 +30,8 @@ function ShowCity() {
                     return (
                       <div className="item2" key={index}>
                         {/* <p>{new Date(city.weatherElement[0].time[0].startTime).toLocaleString(undefined,{
-                      day:'numeric'
-                    })}</p>{/* 顯示時間 */}
+                          day:'numeric'
+                        })}</p>{/* 顯示時間 */}
                         <p>
                           {new Date(time.startTime).toLocaleString(undefined, {
                             day: "numeric",

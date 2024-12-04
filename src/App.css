@@ -127,3 +127,30 @@ a {
   color: #666;
   text-decoration: none;
 }
+.weather {
+  width: 1200px;
+  margin: 50px auto;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap; /* 自動換行(超過550px自動換) */
+  justify-content: space-around;
+}
+.item {
+  border: #666 1px solid;
+  width: 550px; /* 利用每個寬度550 上面那個就會自動換行 */
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.item h3 {
+  background-color: #adacac;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.content {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
