@@ -1,21 +1,30 @@
-import { IoUmbrellaSharp } from "react-icons/io5";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import './ShowCity.css';
-function ShowCity() {
+
+import "./App.css";
+import { IoUmbrellaSharp } from "react-icons/io5";
+
+function App() {
   const [weatherList, setWeatherList] = useState([]);
 
   useEffect(() => {
     (async () => {
-      // const data = await axios.get("./json/F-C0032-001.json");
-      const data = await axios.get(
-        "https://yeeeeefang.github.io/vite-project/json/F-C0032-001.json"
-      );
+      //本地端要在web-server伺服器下才可以執行
+      const data = await axios.get("./json/F-C0032-001.json");
+      // const data = await axios.get(
+      //   "https://yeeeeefang.github.io/vite-project/json/F-C0032-001.json"
+      // );
+      // console.log(data);
       const { location } = data.data.cwaopendata.dataset;
       setWeatherList(location);
       console.log(location);
-    })();
+
+      // locationName =>縣市名
+      // elementName => Wx=>天氣概況
+      // elementName =>PoP =>降雨機率
+    })(); //()=>立即執行的意思
   }, []);
+
   return (
     <>
       <div className="weather">
@@ -53,21 +62,15 @@ function ShowCity() {
                         </p>
                         {/* 顯示時間 */}
                         <p>
-                          <img
-                            src={`./weatherIcon/${time.parameter.parameterName}.svg`}
-                            alt=""
-                          />
-                        </p>
-                        {/* 圖片 */}
+                          <img src={`./weatherIcon/${time.parameter.parameterName}.svg` }alt="" />
+                        </p>{/* 圖片 */}
                         <p>{time.parameter.parameterName}</p>
                         {/* 天氣圖名稱 */}
                         <p>
                           <IoUmbrellaSharp />
                           {
-                            city.weatherElement[4].time[index].parameter
-                              .parameterName
-                          }
-                          %
+                            city.weatherElement[4].time[index].parameter.parameterName
+                          }%
                         </p>
                         {/* 降雨機率 */}
                       </div>
@@ -82,4 +85,4 @@ function ShowCity() {
     </>
   );
 }
-export default ShowCity;
+export default App;
